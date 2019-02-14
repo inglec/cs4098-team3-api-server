@@ -5,7 +5,7 @@ This server provides an interface to read and write data to the SQL database.
 Related repositories:
 * [Client](https://github.com/inglec/tb-or-not-tb-client)
 * [Load Balancer](https://github.com/inglec/tb-or-not-tb-load-balancer)
-* [MCU](https://github.com/inglec/tb-or-not-tb-mcu)
+* [Video Server](https://github.com/inglec/tb-or-not-tb-video-server)
 
 Recommended NPM modules for a Node.js server:
 * [Express](https://www.npmjs.com/package/express): Handle endpoints.
