@@ -38,10 +38,10 @@ const setupExpress = (port) => {
 function main() {
   // Extract command line arguments.
   const args = commandLineArgs([
-    { name: 'port', type: Number },
+    { name: 'port', type: Number, defaultValue: DEFAULT_PORT },
   ]);
 
-  const { port = DEFAULT_PORT } = args;
+  const { port } = args;
 
   // Configure routes.
   setupExpress(port);
