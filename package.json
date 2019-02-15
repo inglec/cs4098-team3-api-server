@@ -1,23 +1,11 @@
 {
-  "name": "group-proj",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "name": "api-server",
+  "author": "Ciarán Ingle, Eddie Bergman, Alex Smirnov, Conal Cosgrove, Conor Nevin, Christopher Meaney",
   "scripts": {
     "lint": "eslint src/** test/**",
     "test": "jest src/** test/**",
     "start": "nodemon src/index.js --port=3000"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/inglec/tb-or-not-tb-api-server.git"
-  },
-  "author": "Ciarán Ingle, Eddie Bergman, Alex Smirnov, Conal Cosgrove, Conor Nevin, Christopher Meaney",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/inglec/tb-or-not-tb-api-server/issues"
-  },
-  "homepage": "https://github.com/inglec/tb-or-not-tb-api-server#readme",
   "devDependencies": {
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
