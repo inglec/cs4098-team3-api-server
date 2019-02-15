@@ -7,10 +7,70 @@ Related repositories:
 * [Load Balancer](https://github.com/inglec/tb-or-not-tb-load-balancer)
 * [Video Server](https://github.com/inglec/tb-or-not-tb-video-server)
 
-Recommended NPM modules for a Node.js server:
-* [Express](https://www.npmjs.com/package/express): Handle endpoints.
-* [Body Parser](https://www.npmjs.com/package/body-parser): Express middleware to convert request body to JSON.
-* [Nodemon](https://www.npmjs.com/package/nodemon): Relaunch dev server on file change.
-* [HTTP Status Codes](https://www.npmjs.com/package/http-status-codes): HTTP status codes as constants.
-* [Axios](https://www.npmjs.com/package/axios): Promise-based request library that's simpler than Node.js's `http` / `https` modules.
-* [Lodash](https://www.npmjs.com/package/lodash): Useful utility functions e.g. mapping objects.
+# Installation
+
+Update packages:
+```bash
+sudo apt update
+sudo apt -y upgrade
+```
+
+Install Node.js and NPM:
+
+```bash
+sudo apt install nodejs
+```
+
+Clone the repository:
+```bash
+git clone https://github.com/inglec/tb-or-not-tb-api-server
+
+cd tb-or-not-tb-api-server/
+```
+
+Install Node modules specified in `package.json`:
+```bash
+npm install
+```
+
+# Scripts
+
+`package.json` defines scripts which perform common tasks.
+
+## Serving
+
+The server is run with [nodemon](https://nodemon.io/), which monitors the file tree and restarts the server when file modifications are detected. This mode should only be used for development, **not production**.
+
+Run the server:
+```bash
+npm start
+```
+
+### Debugging
+
+In order to view the outputs of `logger.debug` statements, you need to set the `DEBUG` environment variable to a comma-separated list of logger names.
+
+Show the debug outputs of the "requests" logger:
+```bash
+DEBUG=requests npm start
+```
+
+## Linting
+
+The repository is set up to follow the [Airbnb JavaScript style guide](https://github.com/airbnb/javascript/blob/master/README.md).
+
+Run linting:
+```bash
+npm run lint
+```
+
+If you use Atom, the [linter-eslint](https://atom.io/packages/linter-eslint) package shows linting errors in real-time in the editor.
+
+## Testing
+
+[Jest](https://jestjs.io/en/) has been installed by the package dependencies, however no real tests have been implemented yet.
+
+Run tests:
+```bash
+npm test
+```
