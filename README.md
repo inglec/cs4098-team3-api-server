@@ -31,7 +31,7 @@ Install dependencies specified in `package.json`:
 npm install
 ```
 
-### Database setup
+### Database Setup
 
 Make DB setup script executable.
 ``` bash
