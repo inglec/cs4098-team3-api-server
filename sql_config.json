@@ -1,0 +1,8 @@
+{
+  "dialect": "mysql",
+  "host": "localhost",
+  "database": "tbtogetherdb",
+  "users": {
+    "root": { "password": "" }
+  }
+}
