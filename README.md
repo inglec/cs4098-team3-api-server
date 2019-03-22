@@ -103,3 +103,109 @@ Run tests:
 ``` bash
 npm test
 ```
+
+# Database
+
+## Tables
+
+### Users
+
+| userId   | name     | userType | avatarUrl | phone    | email    | bio      |
+| -------- | ----     | -------- | --------- | -------- | -------- | -------- |
+| `string` | `string` | `string` | `string`  | `string` | `string` | `string` |
+
+Constraints:
+* `userType`: one of `patient`, `admin`, `mentor`
+
+### Groups
+
+Columns:
+
+| groupId  | groupName | adminId  |
+| -------- | --------- | -------- |
+| `string` | `string`  | `string` |
+
+Primary key: `groupId`
+
+Foreign keys:
+* `adminId` -> `Users`
+
+
+### GroupMentors
+
+**Don't implement**
+
+| groupId  | mentorId |
+| -------- | -------- |
+| `string` | `string` |
+
+Foreign keys:
+* `mentorId` -> `Users`
+
+### GroupUsers
+
+Columns:
+
+| groupId  | userId   |
+| -------- | -------- |
+| `string` | `string` |
+
+Primary key: `groupId` + `userId`
+
+Foreign keys:
+* `userId` -> `Users`
+
+### Room
+
+Columns:
+
+| roomId   | groupId  | startTime | endTime   |
+| -------- | -------- | --------- | --------- |
+| `string` | `string` | `integer` | `integer` |
+
+Primary key: `roomId`
+
+Foreign keys:
+* `groupId` -> `Groups`
+
+### RoomAttendance
+
+| roomId   | userId   | joinedAt  | leftAt    | tickedAt  |
+| -------- | -------- | --------- | --------- | --------- |
+| `string` | `string` | `integer` | `integer` | `integer` |
+
+Primary key: `roomId` + `userId`
+
+Foreign keys:
+* `userId` -> `Users`
+
+### WhitelistedIps
+
+| userId   | ip       |
+| -------- | -------- |
+| `string` | `string` |
+
+Primary key: `userId` + `ip`
+
+## Authorisation
+
+| User Type | Table          | Columns | Rows                             |
+| --------- | -------------- | ------- | -------------------------------- |
+| Admin     | Groups         | *       | *                                |
+| Admin     | GroupMentors   | *       | *                                |
+| Admin     | GroupUsers     | *       | *                                |
+| Admin     | Room           | *       | *                                |
+| Admin     | RoomAttendance | *       | *                                |
+| Admin     | WhitelistedIps | *       | *                                |
+| Mentor    | Groups         | *       | Groups mentor is in              |
+| Mentor    | GroupMentors   | *       | Groups mentor is in              |
+| Mentor    | GroupUsers     | *       | Groups mentor is in              |
+| Mentor    | Room           | *       | Rooms where mentor is in group   |
+| Mentor    | RoomAttendance | -       | -                                |
+| Mentor    | WhitelistedIps | -       | -                                |
+| Patient   | Groups         | *       | Groups patient is in             |
+| Patient   | GroupMentors   | *       | Groups patient is in             |
+| Patient   | GroupUsers     | *       | Groups patient is in             |
+| Patient   | Room           | *       | Rooms where patient is in group  |
+| Patient   | RoomAttendance | -       | -                                |
+| Patient   | WhitelistedIps | -       | -                                |
