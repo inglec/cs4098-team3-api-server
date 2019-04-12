@@ -22,7 +22,7 @@ sudo apt install nodejs
 
 Clone the repository:
 ``` bash
-git clone https://github.com/inglec/tb-or-not-tb-api-server api-server
+git clone https://github.com/inglec/cs4098-team3-api-server api-server
 ```
 
 Install dependencies specified in `package.json`:
