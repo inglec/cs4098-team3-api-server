@@ -1,11 +1,10 @@
-# TB or not TB: API Server
+# CS4098 Team 3: API Server
 
 This server provides an interface to read and write data to the SQL database.
 
 Related repositories:
-* [Client](https://github.com/inglec/tb-or-not-tb-client)
-* [Load Balancer](https://github.com/inglec/tb-or-not-tb-load-balancer)
-* [Video Server](https://github.com/inglec/tb-or-not-tb-video-server)
+* [Client](https://github.com/inglec/cs4098-team3-web-app)
+* [Video Server](https://github.com/inglec/cs4098-team3-video-server)
 
 ## Installation
 
